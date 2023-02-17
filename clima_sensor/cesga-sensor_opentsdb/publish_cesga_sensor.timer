@@ -1,0 +1,10 @@
+[Unit]
+Description=Run publish gpu information
+
+[Timer]
+OnBootSec=2
+OnUnitInactiveSec=300
+RandomizedDelaySec=10
+
+[Install]
+WantedBy=timers.target

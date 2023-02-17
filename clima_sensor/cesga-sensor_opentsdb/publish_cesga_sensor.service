@@ -1,7 +1,0 @@
-[Unit]
-Description=Publish gpu information to OpenTSDB
-
-[Service]
-Type=oneshot
-ExecStart=/opt/cesga/sistemas/user_sessions/publish_gpu_usage.py
-User=root

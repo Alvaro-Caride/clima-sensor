@@ -1,8 +1,9 @@
 /*********
-  Rui Santos
-  Complete project details at https://randomnerdtutorials.com  
 
-  Modificado por Alvaro Caride
+  Alvaro Caride
+  Modified from Rui Santos project in https://randomnerdtutorials.com
+
+  Connect to serial monitor to DEBUG
 *********/
 
 // Load Wi-Fi library
@@ -26,8 +27,8 @@ Adafruit_BME280 bme; // I2C
 //Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO, BME_SCK); // software SPI
 
 // Replace with your network credentials
-const char* ssid     = "invitado";
-const char* password = "cafecafe0000#";
+const char* ssid     = "**************";            // Add your network ssid
+const char* password = "**************";            // Add your network password
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -42,6 +43,8 @@ void setup() {
   // default settings
   // (you can also pass in a Wire library object like &Wire2)
   //status = bme.begin();  
+
+
   if (!bme.begin(0x76)) {
     Serial.println("Could not find a valid BME280 sensor, check wiring!");
     while (1);
@@ -85,13 +88,13 @@ void loop(){
             client.println("Content-type:application/json");
             client.println("Connection: close");
             client.println();
-            // Pruebas para la publicación y lectura más cómodas
+            // Pruebas para la publicación y lectura más cómodas con application/json
             // Respuesta en json
             StaticJsonDocument<200> doc;
             float temp = bme.readTemperature() + 0.16;
             float pressure = bme.readPressure() / 100.0F;
             float humidity = bme.readHumidity() + 8.3;
-            //float dewpoint = (237.7*((17.27*bme .readTemperature()/(237.7+bme.readTemperature()))+(log(bme.readHumidity()/100)/log(2.718))))/(17.27-((17.27*bme.readTemperature()/(237.7+bme.readTemperature()))+(log(bme.readHumidity()/100)/log(2.718))));
+            // Use calibrated values to calc the dewpoint
             float dewpoint = (237.7*((17.27*temp/(237.7+temp))+(log(humidity/100)/log(2.718))))/(17.27-((17.27*temp/(237.7+temp))+(log(humidity/100)/log(2.718))));            
             
             doc["temp"] = temp;
@@ -107,7 +110,7 @@ void loop(){
 
 
 
-            
+            // If we prefer HTML text based we can still use this lines
             // Display the HTML web page
             //client.println("<!DOCTYPE html><html>"); 
             // Web Page Heading

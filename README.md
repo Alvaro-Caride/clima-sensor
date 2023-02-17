@@ -18,6 +18,7 @@ Also we have performed some calibration to the sensor and many tests are still o
 
 For the publushing part we use a systemd timer that points to a python script that makes the publication. We are moving into this direction to try to unify the way we input data into our database. This timer is deployed in an administration virtual machine instanced with this purpose in mind, to unify there most of our metric exporters.
 
+We have also design a enclosure and print it with our printer. this design it's also being refined but you can find some valid designs in [Enclosure](https://gitlab.com/cesga-sistemas/clima_sensor/-/tree/main/Enclosure).
 
-
+## [Firmware](https://gitlab.com/cesga-sistemas/clima_sensor/-/blob/main/Firmware/Cesga-Prototype-Sensor-text-based.ino)
 

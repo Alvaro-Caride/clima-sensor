@@ -6,6 +6,8 @@ This project is intended to deploy a clima sensoring net in the Galicia Supercom
 
 ## Overview
 
+![Clima_Sensor](Images/sensor_full.png "Sensor placed in the back rack space")
+
 The clima sensor project has 2 main separable parts. One is the from the perspective of the sensor, hardware, firmware and calibration. The other part is publushing sensor data into our database and being able to visualize it with our production tools. 
 
 From the sensoring Device, hardware perspective, we have choosen a NodeMCU and a BME280. 
@@ -61,8 +63,10 @@ We have designed and print a simple enclosure just to protect the main body with
 
 ## Cabling
 
-*Fritzing wireing schem*
-*Soldering recommendations*
+![Sensor body](Images/sensor_body.png "Sensor body")
+
+![Sensor cabling](Images/wiring.png "wiring map")
+
 
 **I2c vs SPI**
 

@@ -47,13 +47,13 @@ We have used a calibration-trusted thermometer to compare the measures with our 
 
 This process should be repeated for each sensor we introduce to the system. We could also simply do comparison calibration for both magnitudes but we also could parallelize it so would be better to repeat the process.
 
-## Publication
+## [Publication](https://gitlab.com/cesga-sistemas/clima_sensor/-/blob/main/cesga-sensor_opentsdb/publish_cesga_sensor.py)
 
 To read the values of the sensor we have implemented a systemd timer in a virtual machine that runs the publishing program every 5 minutes. We could easily increase granularity by modifing the timer but the sensor has some problems when your really speedups the readings to 6 readings per minute.
 
 *Enlcaes al timer y explicación de donde esta alojado en la máquina*
 
-## Enclosure
+## [Enclosure](https://gitlab.com/cesga-sistemas/clima_sensor/-/tree/main/Enclosure)
 
 We have designed and print a simple enclosure just to protect the main body with some holes to do all the cabling.
 

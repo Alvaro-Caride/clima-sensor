@@ -3,6 +3,7 @@
 ## Intention
 
 This project is intended to deploy a clima sensoring net in the Galicia Supercomputing Center CESGA.
+
 We started by looking for some reliable clima sensors to deploy and now a days, the state of the project is that we have our firts sensor integrated within the metrics database. As it just have happened, the sensor is still in a testing face but we are whilling to add more sensors to the net iterating the process described below.
 
 

@@ -23,7 +23,7 @@ import re
 import socket
 import os
 
-ENDPOINT = 'http://opentsdb.service.int.cesga.es:4242/api/put'
+ENDPOINT = '******'     # Add DB endpoint
 
 
 def configure_logging():
